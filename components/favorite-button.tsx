@@ -7,7 +7,7 @@ import { useStore } from '../hooks/use-store';
 
 const FavoriteButton = observer((props: { id: string }) => {
     const store = useStore();
-    const [isFavorite, setIsFavorite] = useState(false);
+    const [isFavorite, setIsFavorite] = useState(store.movies.get(props.id)?.isFavorite);
 
     const icon = (isFavorite ? 
         <MaterialIcons name='favorite' size={24} color='red' /> : 
@@ -15,7 +15,7 @@ const FavoriteButton = observer((props: { id: string }) => {
     );
 
     const handlePress = () => {
-        store.setFavorite(props.id, isFavorite);
+        store.setFavorite(props.id, !isFavorite);
         setIsFavorite(!isFavorite);
     };
 

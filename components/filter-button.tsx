@@ -10,7 +10,7 @@ const FilterButton = observer(() => {
     const [isEnabled, setIdEnabled] = useState(false);
 
     const handlePress = () => {
-        store.enableFilter(isEnabled);
+        store.enableFilter(!isEnabled);
         setIdEnabled(!isEnabled);
     };
 

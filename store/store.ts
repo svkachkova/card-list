@@ -15,7 +15,6 @@ class Store {
     }
 
     get viewData(): Movie[] {
-        // [...this.movies.values()].map(movie => console.log(movie));
         return [...this.movies.values()].filter(movie => 
             this.filterEnabled ? movie.isFavorite === true : true
         );
