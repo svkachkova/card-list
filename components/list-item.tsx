@@ -1,24 +1,26 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { FavoriteButton } from './favorite-button';
 import { RemoveButton } from './remove-button';
 
 type Props = {
     movie: Movie;
+    navigation: any;
 };
 
 import { Movie } from '../types';
 
 function ListItem(props: Props) {
     const { id, image, title } = props.movie;
+    const { navigation } = props;
 
     return (
         <View style={styles.item}>
-            <View>
-                <Image style={styles.image} source={{ uri: image }}/>
+            <Pressable onPress={() => navigation.navigate('movie-card', { id })}>
+                <Image style={styles.image} source={{ uri: image }} />
                 <Text style={styles.title}>{title}</Text>
-            </View>
+            </Pressable>
             <View style={styles.buttons}>
                 <FavoriteButton id={id} />
                 <RemoveButton id={id} />
