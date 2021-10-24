@@ -1,14 +1,18 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
 import logo from '../assets/logo.png';
 
-function Promo() {
+function Promo({ navigation }: any) {
     return (
         <View style={styles.contaiter}>
             <Image source={logo} style={styles.image} />
-            {/* <Image source={require('../assets/logo.png')} style={styles.image} /> */}
             <Text style={styles.text}>Collection of Studio Ghibli movies</Text>
-            <TouchableOpacity style={styles.button}>
+
+            <TouchableOpacity 
+                style={styles.button} 
+                onPress={() => navigation.navigate('list-of-movies')}
+            >
                 <Text style={styles.buttonText}>Start</Text>
             </TouchableOpacity>
         </View>
@@ -17,8 +21,10 @@ function Promo() {
 
 const styles = StyleSheet.create({
     contaiter: {
-        // flex: 1,
-        alignItems: 'center', 
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+		paddingTop: 20,
     },
     image: {
         width: 300,
