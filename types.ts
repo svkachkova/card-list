@@ -3,7 +3,7 @@ export type Movie = {
     image: string;
     title: string;
     description: string;
-    reseaseDate: string;
-    score: string;
+    release_date: string;
+    rt_score: string;
     isFavorite: boolean;
 };
