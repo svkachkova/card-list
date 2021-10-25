@@ -14,7 +14,7 @@ const Stack = createNativeStackNavigator();
 function Navigation() {
     const listOfMoviesOptions = ({ navigation }: { navigation: any }) => ({
         title: 'Movies',
-        headerTitleStyle: { fontSize: '20' },
+        headerTitleStyle: { fontSize: 20 },
         headerLeft: () => <BackButton navigation={navigation} />,
         headerRight: () => <FilterButton />,
     })

@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-		paddingTop: 20,
     },
     image: {
         width: 300,
@@ -34,17 +33,18 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 24,
         fontWeight: '300',
+        textAlign: 'center',
         color: '#333',
     },
     button: {
         alignItems: "center",
-        backgroundColor: "#eee",
+        backgroundColor: "#ddd",
         paddingVertical: 20,
         paddingHorizontal: 45,
         margin: 50,
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: '#ddd',
+        borderColor: '#ccc',
     },
     buttonText: {
         fontSize: 24,
